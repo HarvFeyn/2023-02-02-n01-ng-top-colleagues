@@ -2,7 +2,7 @@
 name: Deploy To GitHub Pages
 on:
   push:
-  branches:
+    branches:
     - 'paul-roger'
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
       - name: Use Node 16.x
         uses: actions/setup-node@v1
         with:
-        node-version: '16.x'
+          node-version: '16.x'
       - name: Install dependencies
         run: npm install
       - name: Build
@@ -27,7 +27,7 @@ jobs:
         with:
           name: deploy_dist
           path: dist
-    deploy:
+  deploy:
       name: Deploy to Github Pages
       runs-on: ubuntu-latest
       needs: build
