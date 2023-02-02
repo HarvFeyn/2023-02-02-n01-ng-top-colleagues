@@ -8,7 +8,8 @@ import { ColleagueComponent } from '../shared/components/colleague/colleague.com
     ColleagueComponent
   ],
   exports: [
-    LikeHateComponent
+    LikeHateComponent,
+    ColleagueComponent
   ],
   imports: [
     CommonModule
