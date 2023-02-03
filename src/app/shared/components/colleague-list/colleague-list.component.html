@@ -2,7 +2,7 @@
 <div id="grid" class="grid-container row">
   <ng-container *ngFor="let colleague of colleagueList">
     <div class="col">
-      <tc-colleague [colleague]="colleague"></tc-colleague>
+      <tc-colleague  (objectVote)="traiterVote($event)" [colleague]="colleague"></tc-colleague>
     </div>
   </ng-container>
 </div>

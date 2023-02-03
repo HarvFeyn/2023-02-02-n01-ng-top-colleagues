@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WelcomePage } from './welcome.page';
+import {SharedModule} from "../../shared/shared.module";
 
 
 
@@ -8,8 +9,12 @@ import { WelcomePage } from './welcome.page';
   declarations: [
     WelcomePage
   ],
+  exports: [
+    WelcomePage
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class WelcomeModule { }

@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {LikeHate} from "../../../models/like-hate";
+import {Vote} from "../../../models/vote";
 
 @Component({
   selector: 'tc-colleague',
@@ -14,7 +15,7 @@ export class ColleagueComponent {
     photo:"https://picsum.photos/200/300"
   };
 
-  @Output() objectVote:EventEmitter<Object> = new EventEmitter<Object>();
+  @Output() objectVote:EventEmitter<Vote> = new EventEmitter<Vote>();
 
   traiterLikeHate(likehate:string) {
     if(likehate == "LIKE" && this.colleague.score < 1000) {
