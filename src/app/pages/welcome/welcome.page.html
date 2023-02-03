@@ -1,10 +1,10 @@
 <div id="welcome">
   <h1>Top collègues</h1>
-  <button type="button" class="btn btn-danger">Actualiser la liste</button>
+  <button type="button" class="btn btn-danger" (click)="refresh()">Actualiser la liste</button>
   <div class="container">
     <div class="row">
       <div class="col-8">
-        <tc-colleague-list (objectVote)="traiterVote($event)"></tc-colleague-list>
+        <tc-colleague-list [colleagueList]="listColleague" (objectVote)="traiterVote($event)"></tc-colleague-list>
       </div>
       <div class="col-4">
         <tc-voting-history [voteList]="voteList"></tc-voting-history>
