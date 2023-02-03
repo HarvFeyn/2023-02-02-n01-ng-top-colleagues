@@ -15,7 +15,6 @@ export class WelcomePage {
   public voteList:Vote[] = [];
 
   constructor() {
-    this.refresh();
   }
 
   traiterVote(vote:Vote) {
