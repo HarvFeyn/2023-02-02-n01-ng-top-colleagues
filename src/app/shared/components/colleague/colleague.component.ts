@@ -13,4 +13,11 @@ export class ColleagueComponent {
     photo:"https://picsum.photos/200/300"
   };
 
+  traiterLikeHate(likehate:string) {
+    if(likehate == "LIKE") {
+      this.colleague.score = this.colleague.score + 100;
+    } else if(likehate == "HATE") {
+      this.colleague.score = this.colleague.score - 100;
+    }
+  }
 }

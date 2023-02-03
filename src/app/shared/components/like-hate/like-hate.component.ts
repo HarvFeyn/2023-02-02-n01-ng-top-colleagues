@@ -1,4 +1,4 @@
-import {Component, EventEmitter} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {LikeHate} from "../../../models/like-hate";
 
 @Component({
@@ -7,12 +7,12 @@ import {LikeHate} from "../../../models/like-hate";
   styleUrls: ['./like-hate.component.scss']
 })
 export class LikeHateComponent {
+  @Output() likehate:EventEmitter<string> = new EventEmitter<string>();
 
   clickLike() {
-    change:EventEmitter<string> = new EventEmitter<string>();
-    console.log(LikeHate.LIKE);
+    this.likehate.emit(LikeHate.LIKE)
   }
   clickHate() {
-    console.log(LikeHate.HATE);
+    this.likehate.emit(LikeHate.HATE)
   }
 }

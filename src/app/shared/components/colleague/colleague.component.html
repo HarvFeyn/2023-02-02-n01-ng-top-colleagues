@@ -4,6 +4,6 @@
     <p>{{ colleague.pseudo }}</p>
     <p>Score : {{ colleague.score }}</p>
   </div>
-  <tc-like-hate>
+  <tc-like-hate  (likehate)="traiterLikeHate($event)">
   </tc-like-hate>
 </div>
