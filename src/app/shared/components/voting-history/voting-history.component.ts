@@ -8,6 +8,8 @@ import {LikeHate} from "../../../models/like-hate";
   styleUrls: ['./voting-history.component.scss']
 })
 export class VotingHistoryComponent {
+
+  public data:Vote[] = [];
   @Input() voteList:Vote[] = [{
     colleague:{
       pseudo:"test1",

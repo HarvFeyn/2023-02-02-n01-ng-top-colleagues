@@ -36,6 +36,7 @@ export class ColleagueListComponent {
   }];
 
   traiterVote(vote:Vote) {
-    this.objectVote.emit(vote);
+    const cloneVote = structuredClone(vote);
+    this.objectVote.emit(cloneVote);
   }
 }

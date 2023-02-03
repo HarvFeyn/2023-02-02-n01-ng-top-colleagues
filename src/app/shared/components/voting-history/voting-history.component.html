@@ -8,7 +8,7 @@
             <img class="card-img-left" src="{{vote.colleague.photo}}" alt="Card image cap">
           </div>
           <div class="col-sm">
-            <p>{{vote.colleague.pseudo}}</p>
+            <p>{{vote.colleague.pseudo | uppercase}}</p>
             <p *ngIf="vote.vote == 'LIKE'">{{vote.colleague.pseudo}} est adoré, son score est désormé de {{vote.colleague.score}}</p>
             <p *ngIf="vote.vote == 'HATE'">{{vote.colleague.pseudo}} est détesté, son score est désormé de {{vote.colleague.score}}</p>
             <button type="button" class="btn btn-danger" (click)="supp(i)">Supprimer</button>
