@@ -4,9 +4,7 @@ h1 {
 
 .grid-container {
   display: grid;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 15px;
 }
 
-#grid {
-  grid-template-columns: repeat(3, 175px);
-}
