@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
+import {LikeHate} from "../../../models/like-hate";
 
 @Component({
   selector: 'tc-colleague',
@@ -13,11 +14,15 @@ export class ColleagueComponent {
     photo:"https://picsum.photos/200/300"
   };
 
+  @Output() objectVote:EventEmitter<Object> = new EventEmitter<Object>();
+
   traiterLikeHate(likehate:string) {
     if(likehate == "LIKE" && this.colleague.score < 1000) {
       this.colleague.score = this.colleague.score + 100;
+      this.objectVote.emit({vote:LikeHate.LIKE,colleague:this.colleague})
     } else if(likehate == "HATE" && this.colleague.score > -1000) {
       this.colleague.score = this.colleague.score - 100;
+      this.objectVote.emit({vote:LikeHate.HATE,colleague:this.colleague})
     }
   }
 }

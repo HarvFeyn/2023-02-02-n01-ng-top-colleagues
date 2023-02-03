@@ -14,6 +14,22 @@ export class ColleagueListComponent {
   },{
     pseudo:"test2",
     score:100,
-    photo:"https://picsum.photos/200/300"
+    photo:"https://picsum.photos/200/301"
+  },{
+    pseudo:"test3",
+    score:100,
+    photo:"https://picsum.photos/200/302"
+  },{
+    pseudo:"test4",
+    score:100,
+    photo:"https://picsum.photos/200/303"
+  },{
+    pseudo:"test5",
+    score:100,
+    photo:"https://picsum.photos/200/304"
+  },{
+    pseudo:"test6",
+    score:100,
+    photo:"https://picsum.photos/200/305"
   }];
 }

@@ -1,8 +1,12 @@
-.collegue-grid {
-  display: flex;
-  flex-direction: row;
-}
-
 h1 {
   text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 15px;
+}
+
+#grid {
+  grid-template-columns: repeat(3, 175px);
 }
