@@ -2,7 +2,7 @@
   <img class="card-img-top" src="{{colleague.photo}}" alt="Card image cap">
   <div class="card-body">
     <p>{{ colleague.pseudo | uppercase }}</p>
-    <p>Score : {{ colleague.score }}</p>
+    <p>Score : {{ colleague.score | score }}</p>
   </div>
   <tc-like-hate [score]="colleague.score" (likehate)="traiterLikeHate($event)">
   </tc-like-hate>
