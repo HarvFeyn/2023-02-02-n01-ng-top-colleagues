@@ -14,9 +14,9 @@ export class ColleagueComponent {
   };
 
   traiterLikeHate(likehate:string) {
-    if(likehate == "LIKE") {
+    if(likehate == "LIKE" && this.colleague.score < 1000) {
       this.colleague.score = this.colleague.score + 100;
-    } else if(likehate == "HATE") {
+    } else if(likehate == "HATE" && this.colleague.score > -1000) {
       this.colleague.score = this.colleague.score - 100;
     }
   }
