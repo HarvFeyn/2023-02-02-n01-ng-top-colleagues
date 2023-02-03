@@ -1,7 +1,7 @@
-<div class="card" style="width: 18rem;">
+<div class="card border-danger mb-3" style="max-width: 18rem;">
   <img class="card-img-top" src="{{colleague.photo}}" alt="Card image cap">
   <div class="card-body">
-    <p>{{ colleague.pseudo }}</p>
+    <p>{{ colleague.pseudo | uppercase }}</p>
     <p>Score : {{ colleague.score }}</p>
   </div>
   <tc-like-hate [score]="colleague.score" (likehate)="traiterLikeHate($event)">
