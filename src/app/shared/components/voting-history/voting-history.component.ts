@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Vote} from "../../../models/vote";
 import {LikeHate} from "../../../models/like-hate";
+import {VoteService} from "../../../providers/vote.service";
 
 @Component({
   selector: 'tc-voting-history',
@@ -9,8 +10,17 @@ import {LikeHate} from "../../../models/like-hate";
 })
 export class VotingHistoryComponent {
 
-  public data:Vote[] = [];
-  @Input() voteList:Vote[] = [];
+  private voteList:Array<Vote> = [];
+
+  constructor(private voteService:VoteService) {
+    this.voteService.getVotesAPI().subscribe(value => {
+      this.voteService.setVoteList(value);
+    })
+  }
+
+  getVotes(){
+    return this.voteService.getVote();
+  }
 
   supp(i:number) {
     this.voteList.splice(i,1)

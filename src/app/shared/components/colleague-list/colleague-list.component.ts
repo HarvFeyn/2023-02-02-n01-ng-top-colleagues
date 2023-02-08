@@ -2,14 +2,19 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {Vote} from "../../../models/vote";
 import {ColleagueService} from "../../../providers/colleague.service";
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'tc-colleague-list',
   templateUrl: './colleague-list.component.html',
   styleUrls: ['./colleague-list.component.scss']
 })
-export class ColleagueListComponent implements OnInit {
+export class ColleagueListComponent {
+  private subject1:Subject<Colleague[]> = new Subject<Colleague[]>();
   constructor(private colleagueService:ColleagueService) {
+    this.colleagueService.getCollegueApi().subscribe(value => {
+      this.colleagueService.setCollegueList(value);
+    })
   }
   @Output() objectVote:EventEmitter<Vote> = new EventEmitter<Vote>();
   @Input() colleagueList:Colleague[] = [];
@@ -18,7 +23,8 @@ export class ColleagueListComponent implements OnInit {
     const cloneVote = structuredClone(vote);
     this.objectVote.emit(cloneVote);
   }
-  ngOnInit() {
-    this.colleagueList = this.colleagueService.list();
+
+  getColleagueList():Colleague[]{
+    return this.colleagueService.getCollegues();
   }
 }

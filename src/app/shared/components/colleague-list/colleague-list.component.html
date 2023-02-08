@@ -1,6 +1,6 @@
 <h2>Mes collègues</h2>
 <div id="grid" class="grid-container">
-  <ng-container *ngFor="let colleague of colleagueList">
+  <ng-container *ngFor="let colleague of getColleagueList()">
     <tc-colleague (objectVote)="traiterVote($event)" [colleague]="colleague"></tc-colleague>
   </ng-container>
 </div>
