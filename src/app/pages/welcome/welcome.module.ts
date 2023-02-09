@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WelcomePage } from './welcome.page';
 import {SharedModule} from "../../shared/shared.module";
-
+import {RouterOutlet} from "@angular/router";
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import {SharedModule} from "../../shared/shared.module";
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterOutlet
   ]
 })
 export class WelcomeModule { }
