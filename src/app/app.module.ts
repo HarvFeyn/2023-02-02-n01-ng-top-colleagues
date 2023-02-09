@@ -11,16 +11,18 @@ import {RouterModule, Routes} from "@angular/router";
 import {CreateColleaguePage} from "./pages/create-colleague/create-colleague.page";
 import {WelcomePage} from "./pages/welcome/welcome.page";
 import {MenuComponentPage} from "./pages/menu-component/menu-component.page";
+import {DetailsColleaguePage} from "./pages/details-colleague/details-colleague.page";
 
 const routes: Routes = [
   {path: 'accueil', component: WelcomePage},
-  {path: 'formulaire', component: CreateColleaguePage}
+  {path: 'formulaire', component: CreateColleaguePage},
+  {path: 'details/:pseudo', component: DetailsColleaguePage}
 ];
 
 @NgModule({
     declarations: [
         AppComponent,
-        MenuComponentPage
+        MenuComponentPage,
     ],
     imports: [
         BrowserModule, SharedModule, NgbModule, WelcomeModule, HttpClientModule, CreateColleagueModule, RouterModule.forRoot(routes)

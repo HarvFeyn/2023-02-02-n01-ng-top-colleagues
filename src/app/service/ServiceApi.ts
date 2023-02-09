@@ -8,4 +8,8 @@ export class ServiceApi {
     return getDataAxios<Colleague[]>(this.url);
   }
 
+  returnOneColleague(pseudo:string) {
+    return getDataAxios<Colleague[]>(this.url.concat('/').concat(pseudo));
+  }
+
 }

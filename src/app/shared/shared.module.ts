@@ -7,6 +7,7 @@ import { ScorePipe } from '../shared/pipes/score.pipe';
 import { VotingHistoryComponent } from '../shared/components/voting-history/voting-history.component';
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
 @NgModule({
   declarations: [
     LikeHateComponent,
@@ -14,19 +15,21 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ColleagueListComponent,
     ScorePipe,
     VotingHistoryComponent,
-    CreateColleagueFormsComponent
+    CreateColleagueFormsComponent,
   ],
-    exports: [
-        LikeHateComponent,
-        ColleagueComponent,
-        ColleagueListComponent,
-        VotingHistoryComponent,
-        CreateColleagueFormsComponent
-    ],
+  exports: [
+    LikeHateComponent,
+    ColleagueComponent,
+    ColleagueListComponent,
+    VotingHistoryComponent,
+    CreateColleagueFormsComponent,
+    ScorePipe,
+  ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class SharedModule { }

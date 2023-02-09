@@ -3,6 +3,7 @@
   <div class="card-body">
     <p>{{ colleague.pseudo | uppercase }}</p>
     <p>Score : {{ colleague.score | score }}</p>
+    <a [routerLink]="['/details/', colleague.pseudo]">Détails</a>
   </div>
   <tc-like-hate [score]="colleague.score" (likehate)="traiterLikeHate($event)">
   </tc-like-hate>

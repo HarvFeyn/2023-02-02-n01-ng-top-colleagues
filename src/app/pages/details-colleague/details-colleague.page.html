@@ -1,1 +1,10 @@
-<p>details-colleague works!</p>
+<h2>Une/Un collègue</h2>
+<div class="card border-danger mb-3" style="max-width: 18rem;">
+  <img class="card-img-top" src="{{oneColleague?.photo}}" alt="Card image cap">
+  <div class="card-body">
+    <p>{{ oneColleague?.pseudo }}</p>
+    <p>Score : {{ oneColleague?.score }}</p>
+    <p>Nom : {{ oneColleague?.last }}</p>
+    <p>Prénom : {{ oneColleague?.first }}</p>
+  </div>
+</div>

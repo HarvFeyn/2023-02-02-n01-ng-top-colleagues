@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DetailsColleaguePage } from './details-colleague.page';
+import {SharedModule} from "../../shared/shared.module";
 
 
 
@@ -9,7 +10,8 @@ import { DetailsColleaguePage } from './details-colleague.page';
     DetailsColleaguePage
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class DetailsColleagueModule { }
